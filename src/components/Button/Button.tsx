@@ -13,7 +13,7 @@ interface ButtonProps {
 export const Button: FC<ButtonProps> = ({
 	children,
 	onClick,
-	type = 'solid',
+	type = 'primary',
 	bgColor,
 	fontSize,
 	disabled,
