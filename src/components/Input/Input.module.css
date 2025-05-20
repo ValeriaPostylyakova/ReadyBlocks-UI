@@ -1,0 +1,42 @@
+.input {
+	padding: var(--padding);
+	color: var(--color);
+	border-radius: var(--radius);
+	outline: none;
+	border: none;
+}
+
+.solid {
+	border: 1px solid var(--border-color);
+}
+
+.outlined {
+	border-bottom: 1px solid var(--border-color);
+	background-color: transparent;
+	border-radius: 0;
+}
+
+.filled {
+	border-bottom: 1px solid var(--border-color);
+	background-color: transparent;
+	background-color: #ebebeb;
+	border-radius: 0;
+}
+
+.label {
+	font-size: 14px;
+	font-weight: 500;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	color: var(--border-color);
+	margin-right: 0.4rem;
+}
+
+.block {
+	display: block;
+	margin-bottom: 0.4rem;
+}
+
+.inline {
+	display: inline-block;
+	margin-right: 0.5rem;
+}
