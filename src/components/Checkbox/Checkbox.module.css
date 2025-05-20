@@ -36,7 +36,6 @@
 .checkboxInput:focus {
 	border-color: var(--checkbox-background-color);
 	outline: none;
-	box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
 }
 
 .checkboxInput:disabled {
