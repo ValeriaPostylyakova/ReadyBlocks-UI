@@ -52,9 +52,9 @@ export const LabeInline: Story = {
 export const LabelBlock: Story = {
 	args: {
 		id: 'label-block',
-		label: 'Введите вашу почту',
+		label: 'label:',
 		labelDisplay: 'block',
-		placeholder: 'Введите почту',
+		placeholder: 'Placeholder',
 		variant: 'solid',
 	},
 }

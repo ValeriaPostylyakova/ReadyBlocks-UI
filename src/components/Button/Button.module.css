@@ -10,33 +10,31 @@
 	line-height: 1;
 	padding: 10px 20px;
 	font-size: var(--font-size, 14px);
-	background-color: var(--button-background-color, #39349a);
+	background-color: var(--button-background-color);
 	color: #fff;
 	text-align: center;
-	transition: 0.2s ease-in-out;
+	transition: opacity 0.3s ease-in-out;
 }
 
 .button:hover {
-	box-shadow: 0 3px 6px var(--button-background-color, #37329559);
-	transform: translateY(-1px);
+	opacity: 0.8;
 }
 
 .button:active {
-	box-shadow: 0 1px 2px var(--button-background-color, #3732951c);
-	transform: translateY(1px);
+	opacity: 0.4;
 }
 
 .outlined {
 	background-color: transparent;
-	color: var(--button-background-color, #373295);
-	border: 1px solid var(--button-background-color, #373295);
+	color: var(--button-background-color);
+	border: 1px solid var(--button-background-color);
 }
 .dashed {
 	background-color: transparent;
-	color: var(--button-background-color, #373295);
-	border: 1px dashed var(--button-background-color, #373295);
+	color: var(--button-background-color);
+	border: 1px dashed var(--button-background-color);
 }
 .filled {
-	background-color: var(--button-background-color, #37329530);
-	color: var(--button-background-color, #373295);
+	background-color: var(--button-background-color-grba);
+	color: var(--button-background-color);
 }

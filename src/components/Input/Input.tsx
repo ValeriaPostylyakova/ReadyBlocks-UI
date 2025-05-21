@@ -1,4 +1,5 @@
-import { FC } from 'react'
+import React, { FC } from 'react'
+import { hexToRgba } from '../../lib/generate-rgb'
 import styles from './Input.module.css'
 
 export interface Props {
@@ -21,6 +22,20 @@ export interface Props {
 	focusBorderColor?: string
 }
 
+export interface LabelStyle extends React.CSSProperties {
+	'--label-color': string
+}
+
+export interface InputStyle extends React.CSSProperties {
+	'--bg-color': string
+	'--border-color': string
+	'--radius': string
+	'--padding': string
+	'--focus-color': string
+	'--focus-border-color': string
+	'--border-color-rgba': string
+}
+
 export const Input: FC<Props> = ({
 	type = 'text',
 	bgColor = '#f9f9f9',
@@ -32,16 +47,28 @@ export const Input: FC<Props> = ({
 	focusBorderColor = '#5d5d5d',
 	...props
 }) => {
+	const colorBoxShadow = hexToRgba(focusColor, 0.1)
+
+	const labelStyle: LabelStyle = {
+		'--label-color': borderColor,
+	}
+
+	const inputStyle: InputStyle = {
+		'--bg-color': bgColor,
+		'--border-color': borderColor,
+		'--radius': radius,
+		'--padding': padding,
+		'--focus-color': focusColor,
+		'--focus-border-color': focusBorderColor,
+		'--border-color-rgba': colorBoxShadow ? colorBoxShadow : '',
+	}
+
 	return (
 		<>
 			<label
 				htmlFor={props.id}
 				className={`${styles.label} ${styles[props.labelDisplay!]}`}
-				style={
-					{
-						'--label-color': borderColor,
-					} as React.CSSProperties
-				}
+				style={labelStyle}
 			>
 				{props.label}
 			</label>
@@ -49,16 +76,7 @@ export const Input: FC<Props> = ({
 				type={type}
 				className={`${styles.input} ${styles[props.variant]}`}
 				{...props}
-				style={
-					{
-						'--bg-color': bgColor,
-						'--border-color': borderColor,
-						'--radius': radius,
-						'--padding': padding,
-						'--focus-color': focusColor,
-						'--focus-border-color': focusBorderColor,
-					} as React.CSSProperties
-				}
+				style={inputStyle}
 			/>
 		</>
 	)

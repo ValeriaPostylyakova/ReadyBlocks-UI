@@ -1,4 +1,5 @@
 import { FC, ReactNode } from 'react'
+import { hexToRgba } from '../../lib/generate-rgb'
 import styles from './Button.module.css'
 
 interface ButtonProps {
@@ -10,27 +11,34 @@ interface ButtonProps {
 	disabled?: boolean
 }
 
+interface ButtonStyles extends React.CSSProperties {
+	'--button-background-color': string
+	'--button-background-color-grba': string | null
+	'--font-size'?: string
+}
+
 export const Button: FC<ButtonProps> = ({
 	children,
 	onClick,
 	type = 'solid',
-	bgColor,
+	bgColor = '#39349a',
 	fontSize,
 	disabled,
 }) => {
-	const classes = `${styles.button} ${styles[type]}`
+	const bgColorGrba = hexToRgba(bgColor, 0.3)
+
+	const buttonStyle: ButtonStyles = {
+		'--button-background-color': bgColor,
+		'--button-background-color-grba': bgColorGrba,
+		...(fontSize ? { '--font-size': fontSize } : {}),
+	}
 
 	return (
 		<button
 			disabled={disabled}
-			className={classes}
+			className={`${styles.button} ${styles[type]}`}
 			onClick={onClick}
-			style={
-				{
-					'--button-background-color': bgColor,
-					'--font-size': fontSize,
-				} as React.CSSProperties
-			}
+			style={buttonStyle}
 		>
 			{children}
 		</button>

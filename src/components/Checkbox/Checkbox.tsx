@@ -1,4 +1,5 @@
 import { FC, useState } from 'react'
+import { hexToRgba } from '../../lib/generate-rgb'
 import styles from './Checkbox.module.css'
 
 export interface Props {
@@ -8,6 +9,12 @@ export interface Props {
 	size?: string
 	disabled?: boolean
 	checked?: boolean
+}
+
+export interface CheckboxStyles extends React.CSSProperties {
+	'--checkbox-background-color': string
+	'--checkbox-size': string
+	'--bg-color-rgba': string
 }
 
 export const Checkbox: FC<Props> = ({
@@ -24,6 +31,14 @@ export const Checkbox: FC<Props> = ({
 		setIsChecked(prevChecked => !prevChecked)
 	}
 
+	const bgColorRgba = hexToRgba(bgColor, 0.25)
+
+	const checkboxStyle: CheckboxStyles = {
+		'--bg-color-rgba': bgColorRgba ? bgColorRgba : '',
+		'--checkbox-size': size,
+		'--checkbox-background-color': bgColor,
+	}
+
 	return (
 		<div className={styles.checkboxItem}>
 			<input
@@ -33,12 +48,7 @@ export const Checkbox: FC<Props> = ({
 				disabled={disabled}
 				checked={isChecked}
 				onChange={handleChange}
-				style={
-					{
-						'--checkbox-background-color': bgColor,
-						'--checkbox-size': size,
-					} as React.CSSProperties
-				}
+				style={checkboxStyle}
 			/>
 			<label
 				style={{
