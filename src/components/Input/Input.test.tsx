@@ -1,5 +1,5 @@
 import '@testing-library/jest-dom'
-import { render, screen } from '@testing-library/react'
+import { fireEvent, render, screen } from '@testing-library/react'
 import { Input } from './Input'
 
 describe('Input', () => {
@@ -54,5 +54,26 @@ describe('Input', () => {
 
 		const inputElem = screen.getByPlaceholderText('Placeholder')
 		expect(inputElem).toHaveClass('outlined')
+	})
+
+	it('Изменение стилей при фокусе', () => {
+		render(
+			<Input
+				type='text'
+				id='input'
+				variant='solid'
+				placeholder='Placeholder'
+				focusColor='#373b3e'
+				focusBorderColor='#5d5d5d'
+			/>
+		)
+
+		const inputElem = screen.getByPlaceholderText('Placeholder')
+		fireEvent.focus(inputElem)
+
+		expect(inputElem).toHaveStyle({
+			borderColor: '#5d5d5d',
+			color: '#373b3e',
+		})
 	})
 })

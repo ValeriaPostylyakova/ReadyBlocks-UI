@@ -12,27 +12,36 @@ export interface Props {
 	disabled?: boolean
 	autoFocus?: boolean
 	autoComplete?: string
+	bgColor?: string
 	borderColor?: string
 	padding?: string
 	radius?: string
 	fontSize?: string
-	color?: string
+	focusColor?: string
+	focusBorderColor?: string
 }
 
 export const Input: FC<Props> = ({
 	type = 'text',
-	color,
-	borderColor = '#7f7f7f',
+	bgColor = '#f9f9f9',
+	borderColor = '#4a4a4a',
 	radius = '0.3rem',
 	padding = '8px 10px',
-	labelDisplay = 'inline',
+
+	focusColor = '#373b3e',
+	focusBorderColor = '#5d5d5d',
 	...props
 }) => {
 	return (
 		<>
 			<label
 				htmlFor={props.id}
-				className={`${styles.label} ${styles[labelDisplay]}`}
+				className={`${styles.label} ${styles[props.labelDisplay!]}`}
+				style={
+					{
+						'--label-color': borderColor,
+					} as React.CSSProperties
+				}
 			>
 				{props.label}
 			</label>
@@ -42,10 +51,12 @@ export const Input: FC<Props> = ({
 				{...props}
 				style={
 					{
-						'--color': color,
+						'--bg-color': bgColor,
 						'--border-color': borderColor,
 						'--radius': radius,
 						'--padding': padding,
+						'--focus-color': focusColor,
+						'--focus-border-color': focusBorderColor,
 					} as React.CSSProperties
 				}
 			/>

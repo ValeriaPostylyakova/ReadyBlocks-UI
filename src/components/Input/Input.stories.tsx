@@ -15,27 +15,10 @@ export default meta
 
 type Story = StoryObj<typeof Input>
 
-export const Basic: Story = {
+export const Solid: Story = {
 	args: {
 		id: 'basic',
 		placeholder: 'Placeholder',
-	},
-}
-
-export const LabeInline: Story = {
-	args: {
-		id: 'label-inline',
-		label: 'label:',
-		labelDisplay: 'inline',
-		variant: 'solid',
-	},
-}
-
-export const LabelBlock: Story = {
-	args: {
-		id: 'label-block',
-		label: 'label:',
-		labelDisplay: 'block',
 		variant: 'solid',
 	},
 }
@@ -53,6 +36,26 @@ export const Filled: Story = {
 		id: 'filled',
 		placeholder: 'Placeholder',
 		variant: 'filled',
+	},
+}
+
+export const LabeInline: Story = {
+	args: {
+		id: 'label-inline',
+		label: 'label:',
+		labelDisplay: 'inline',
+		placeholder: 'Placeholder',
+		variant: 'solid',
+	},
+}
+
+export const LabelBlock: Story = {
+	args: {
+		id: 'label-block',
+		label: 'Введите вашу почту',
+		labelDisplay: 'block',
+		placeholder: 'Введите почту',
+		variant: 'solid',
 	},
 }
 

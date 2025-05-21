@@ -1,12 +1,24 @@
 .input {
 	padding: var(--padding);
-	color: var(--color);
+	color: var(--border-color);
 	border-radius: var(--radius);
 	outline: none;
 	border: none;
+	transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+	&::placeholder {
+		color: var(--border-color);
+		opacity: 0.6;
+	}
+
+	&:focus {
+		color: var(--focus-color);
+		border-color: var(--focus-border-color);
+	}
 }
 
 .solid {
+	background-color: var(--bg-color);
 	border: 1px solid var(--border-color);
 }
 
@@ -18,8 +30,7 @@
 
 .filled {
 	border-bottom: 1px solid var(--border-color);
-	background-color: transparent;
-	background-color: #ebebeb;
+	background-color: var(--bg-color);
 	border-radius: 0;
 }
 
@@ -27,16 +38,16 @@
 	font-size: 14px;
 	font-weight: 500;
 	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-	color: var(--border-color);
-	margin-right: 0.4rem;
+	color: var(--label-color);
 }
 
 .block {
 	display: block;
-	margin-bottom: 0.4rem;
+	margin-bottom: 0.5rem;
+	margin-left: 4px;
 }
 
 .inline {
 	display: inline-block;
-	margin-right: 0.5rem;
+	margin-right: 1rem;
 }
