@@ -4,7 +4,8 @@
 	border-radius: var(--radius);
 	outline: none;
 	border: none;
-	transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+	transition: border-color 0.15s ease-in-out;
+	background-color: inherit;
 
 	&::placeholder {
 		color: var(--border-color);
@@ -14,12 +15,10 @@
 	&:focus {
 		color: var(--focus-color);
 		border-color: var(--focus-border-color);
-		box-shadow: 0 0 0 0.2rem var(--border-color-rgba);
 	}
 }
 
 .solid {
-	background-color: var(--bg-color);
 	border: 1px solid var(--border-color);
 }
 
@@ -31,8 +30,8 @@
 
 .filled {
 	border-bottom: 1px solid var(--border-color);
-	background-color: var(--bg-color);
 	border-radius: 0;
+	background-color: var(--bg-color);
 }
 
 .label {

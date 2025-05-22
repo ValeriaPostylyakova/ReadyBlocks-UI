@@ -58,22 +58,20 @@ describe('Input', () => {
 
 	it('Изменение стилей при фокусе', () => {
 		render(
-			<Input
-				type='text'
-				id='input'
-				variant='solid'
-				placeholder='Placeholder'
-				focusColor='#373b3e'
-				focusBorderColor='#5d5d5d'
-			/>
+			<Input type='text' id='input' variant='solid' placeholder='Placeholder' />
 		)
 
 		const inputElem = screen.getByPlaceholderText('Placeholder')
 		fireEvent.focus(inputElem)
 
-		expect(inputElem).toHaveStyle({
-			borderColor: '#5d5d5d',
-			color: '#373b3e',
-		})
+		const focusColor =
+			getComputedStyle(inputElem).getPropertyValue('--focus-color')
+
+		const focusBorderColor = getComputedStyle(inputElem).getPropertyValue(
+			'--focus-border-color'
+		)
+
+		expect(focusBorderColor).toBe('#ffffff')
+		expect(focusColor).toBe('#373b3e')
 	})
 })

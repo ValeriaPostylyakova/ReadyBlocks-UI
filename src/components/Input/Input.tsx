@@ -1,5 +1,4 @@
 import React, { FC } from 'react'
-import { hexToRgba } from '../../lib/generate-rgb'
 import styles from './Input.module.css'
 
 export interface Props {
@@ -33,7 +32,6 @@ export interface InputStyle extends React.CSSProperties {
 	'--padding': string
 	'--focus-color': string
 	'--focus-border-color': string
-	'--border-color-rgba': string
 }
 
 export const Input: FC<Props> = ({
@@ -44,11 +42,9 @@ export const Input: FC<Props> = ({
 	padding = '8px 10px',
 
 	focusColor = '#373b3e',
-	focusBorderColor = '#5d5d5d',
+	focusBorderColor = '#ffffff',
 	...props
 }) => {
-	const colorBoxShadow = hexToRgba(focusColor, 0.1)
-
 	const labelStyle: LabelStyle = {
 		'--label-color': borderColor,
 	}
@@ -60,7 +56,6 @@ export const Input: FC<Props> = ({
 		'--padding': padding,
 		'--focus-color': focusColor,
 		'--focus-border-color': focusBorderColor,
-		'--border-color-rgba': colorBoxShadow ? colorBoxShadow : '',
 	}
 
 	return (
