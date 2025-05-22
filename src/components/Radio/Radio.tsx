@@ -1,6 +1,6 @@
 import { FC, useState } from 'react'
 import { hexToRgba } from '../../lib/generate-rgb'
-import styles from './Checkbox.module.css'
+import styles from './Radio.module.css'
 
 export interface Props {
 	id: string
@@ -9,19 +9,22 @@ export interface Props {
 	size?: string
 	disabled?: boolean
 	checked?: boolean
+	borderColor?: string
 }
 
-export interface CheckboxStyles extends React.CSSProperties {
-	'--checkbox-background-color': string
-	'--checkbox-size': string
+export interface RadioStyle extends React.CSSProperties {
 	'--bg-color-rgba': string
+	'--radio-size': string
+	'--radio-background-color': string
+	'--radio-border-color': string
 }
 
-export const Checkbox: FC<Props> = ({
+export const Radio: FC<Props> = ({
 	id,
 	label,
 	bgColor = '#373295',
-	size = '20px',
+	borderColor = '#dee2e6',
+	size = '16px',
 	disabled,
 	checked,
 }) => {
@@ -33,10 +36,11 @@ export const Checkbox: FC<Props> = ({
 
 	const bgColorRgba = hexToRgba(bgColor, 0.25)
 
-	const checkboxStyle: CheckboxStyles = {
+	const radioStyle: RadioStyle = {
 		'--bg-color-rgba': bgColorRgba ? bgColorRgba : '',
-		'--checkbox-size': size,
-		'--checkbox-background-color': bgColor,
+		'--radio-size': size,
+		'--radio-background-color': bgColor,
+		'--radio-border-color': borderColor,
 	}
 
 	const labelStyles = {
@@ -46,17 +50,17 @@ export const Checkbox: FC<Props> = ({
 	}
 
 	return (
-		<div className={styles.checkboxItem}>
+		<div className={styles.radioItem}>
 			<input
 				id={id}
-				type='checkbox'
-				className={styles.checkboxInput}
+				type='radio'
+				className={styles.radioInput}
 				disabled={disabled}
 				checked={isChecked}
 				onChange={handleChange}
-				style={checkboxStyle}
+				style={radioStyle}
 			/>
-			<label style={labelStyles} htmlFor={id} className={styles.checkboxLabel}>
+			<label style={labelStyles} htmlFor={id} className={styles.radioLabel}>
 				{label}
 			</label>
 		</div>
