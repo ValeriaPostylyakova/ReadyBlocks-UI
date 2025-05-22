@@ -4,7 +4,7 @@ import styles from './Checkbox-Radio-Item.module.css'
 
 export interface Props {
 	id: string
-	label: string
+	label?: string
 	checked?: boolean
 	disabled?: boolean
 	bgColor?: string

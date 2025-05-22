@@ -9,9 +9,9 @@
 
 .checkboxInput {
 	appearance: none;
-	width: var(--checkbox-size);
-	height: var(--checkbox-size);
-	border: 1px solid var(--checkbox-background-color);
+	width: var(--item-size);
+	height: var(--item-size);
+	border: 1px solid var(--item-background-color);
 	border-radius: 0.25rem;
 	background-color: #fff;
 	cursor: pointer;
@@ -22,8 +22,8 @@
 }
 
 .checkboxInput:checked {
-	background-color: var(--checkbox-background-color);
-	border-color: var(--checkbox-background-color);
+	background-color: var(--item-background-color);
+	border-color: var(--item-background-color);
 	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e");
 }
 
@@ -32,11 +32,11 @@
 }
 
 .checkboxInput:hover:not(:disabled) {
-	border-color: var(--checkbox-background-color);
+	border-color: var(--item-background-color);
 }
 
 .checkboxInput:focus {
-	border-color: var(--checkbox-background-color);
+	border-color: var(--item-background-color);
 	outline: none;
 	box-shadow: 0 0 0 0.25rem var(--bg-color-rgba);
 }
@@ -64,9 +64,9 @@
 .radioInput {
 	-webkit-appearance: none;
 	appearance: none;
-	width: var(--radio-size);
-	height: var(--radio-size);
-	border: 1px solid var(--radio-border-color);
+	width: var(--item-size);
+	height: var(--item-size);
+	border: 1px solid var(--item-border-color);
 	border-radius: 50%;
 	background-color: #fff;
 	background-repeat: no-repeat;
@@ -79,8 +79,8 @@
 }
 
 .radioInput:checked {
-	background-color: var(--radio-background-color);
-	border-color: var(--radio-background-color);
+	background-color: var(--item-background-color);
+	border-color: var(--item-background-color);
 	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23fff'/%3e%3c/svg%3e");
 	box-shadow: 0 0 0 0.2rem var(--bg-color-rgba);
 }
