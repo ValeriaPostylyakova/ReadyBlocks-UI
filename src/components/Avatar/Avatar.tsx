@@ -6,29 +6,28 @@ export interface Props {
 	bgColor?: string
 	width?: string
 	src?: string
+	fontSize?: string
+	size: 'small' | 'medium' | 'large'
 }
 
 export interface AvatarStyles extends React.CSSProperties {
 	'--bg-color': string
-	'--width': string
+	'--width'?: string
 	'--image-url': string
+	'--font-size'?: string
 }
 
-export const Avatar: FC<Props> = ({
-	children,
-	bgColor = '#39349a',
-	width = '50px',
-	src,
-}) => {
+export const Avatar: FC<Props> = ({ bgColor = '#39349a', size, ...props }) => {
 	const style: AvatarStyles = {
 		'--bg-color': bgColor,
-		'--width': width,
-		'--image-url': `url(${src})`,
+		'--width': props.width,
+		'--image-url': `url(${props.src})`,
+		'--font-size': props.fontSize,
 	}
 
 	return (
-		<div style={style} className={styles.avatar}>
-			{children}
+		<div style={style} className={`${styles.avatar} ${styles[size]}`}>
+			{props.children}
 		</div>
 	)
 }

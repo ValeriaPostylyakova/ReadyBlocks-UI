@@ -1,7 +1,8 @@
 .avatar {
+	overflow: hidden;
 	width: var(--width);
 	height: var(--width);
-	font-size: 1.6rem;
+	padding: 1px;
 	border-radius: 50%;
 	background-color: var(--bg-color);
 	display: flex;
@@ -9,6 +10,7 @@
 	align-items: center;
 	color: #fff;
 	text-transform: uppercase;
+	transition: opacity 0.3s ease-in-out;
 	background-image: var(--image-url);
 	background-size: cover;
 	background-position: center;
@@ -16,4 +18,26 @@
 	cursor: pointer;
 	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
 		'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.avatar:hover {
+	opacity: 0.9;
+}
+
+.small {
+	width: 30px;
+	height: 30px;
+	font-size: 1.1rem;
+}
+
+.medium {
+	width: 40px;
+	height: 40px;
+	font-size: 1.2rem;
+}
+
+.large {
+	width: 50px;
+	height: 50px;
+	font-size: 1.3rem;
 }

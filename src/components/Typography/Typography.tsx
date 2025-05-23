@@ -15,10 +15,11 @@ export interface TypographyStyles extends React.CSSProperties {
 }
 
 export const Typography: FC<Props> = ({
-	variant,
+	variant = 'p',
 	children,
 	color = '#000000',
 	fontSize,
+	className,
 }) => {
 	const stylesTypography: TypographyStyles = {
 		'--color': color,
@@ -29,7 +30,7 @@ export const Typography: FC<Props> = ({
 		case 'h1':
 			return (
 				<h1
-					className={`${styles.typography} ${styles.h1}`}
+					className={`${styles.typography} ${styles.h1} ${className}`}
 					style={stylesTypography}
 				>
 					{children}
@@ -39,7 +40,7 @@ export const Typography: FC<Props> = ({
 			return (
 				<h2
 					style={stylesTypography}
-					className={`${styles.typography} ${styles.h2}`}
+					className={`${styles.typography} ${styles.h2} ${className}`}
 				>
 					{children}
 				</h2>
@@ -48,7 +49,7 @@ export const Typography: FC<Props> = ({
 			return (
 				<h3
 					style={stylesTypography}
-					className={`${styles.typography} ${styles.h3}`}
+					className={`${styles.typography} ${styles.h3} ${className}`}
 				>
 					{children}
 				</h3>
@@ -57,7 +58,7 @@ export const Typography: FC<Props> = ({
 			return (
 				<h4
 					style={stylesTypography}
-					className={`${styles.typography} ${styles.h4}`}
+					className={`${styles.typography} ${styles.h4} ${className}`}
 				>
 					{children}
 				</h4>
@@ -66,7 +67,7 @@ export const Typography: FC<Props> = ({
 			return (
 				<h5
 					style={stylesTypography}
-					className={`${styles.typography} ${styles.h5}`}
+					className={`${styles.typography} ${styles.h5} ${className}`}
 				>
 					{children}
 				</h5>
@@ -75,7 +76,7 @@ export const Typography: FC<Props> = ({
 			return (
 				<h6
 					style={stylesTypography}
-					className={`${styles.typography} ${styles.h6}`}
+					className={`${styles.typography} ${styles.h6} ${className}`}
 				>
 					{children}
 				</h6>
@@ -84,16 +85,7 @@ export const Typography: FC<Props> = ({
 			return (
 				<p
 					style={stylesTypography}
-					className={`${styles.typography} ${styles.p}`}
-				>
-					{children}
-				</p>
-			)
-		default:
-			return (
-				<p
-					style={stylesTypography}
-					className={`${styles.typography} ${styles.p}`}
+					className={`${styles.typography} ${styles.p} ${className}`}
 				>
 					{children}
 				</p>

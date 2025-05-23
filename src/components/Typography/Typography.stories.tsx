@@ -64,18 +64,11 @@ export const P: Story = {
 	},
 }
 
-export const PColor: Story = {
+export const Custom: Story = {
 	args: {
-		children: 'Typography p',
-		variant: 'p',
+		children: 'Typography h2',
+		variant: 'h2',
 		color: '#632d98',
-	},
-}
-
-export const PFontSize: Story = {
-	args: {
-		children: 'Typography p',
-		variant: 'p',
-		fontSize: '2.5rem',
+		fontSize: '1.2rem',
 	},
 }
