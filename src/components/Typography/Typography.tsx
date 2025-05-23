@@ -2,7 +2,7 @@ import { FC, ReactNode } from 'react'
 import styles from './Typography.module.css'
 
 export interface Props {
-	variant: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p'
+	variant?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p'
 	children?: ReactNode
 	color?: string
 	fontSize?: string
