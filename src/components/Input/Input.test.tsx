@@ -72,6 +72,6 @@ describe('Input', () => {
 		)
 
 		expect(focusBorderColor).toBe('#ffffff')
-		expect(focusColor).toBe('#373b3e')
+		expect(focusColor).toBe('#090909')
 	})
 })

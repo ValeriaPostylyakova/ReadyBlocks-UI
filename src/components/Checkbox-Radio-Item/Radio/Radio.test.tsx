@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom'
 import { fireEvent, render, screen } from '@testing-library/react'
-import { CheckboxRadioItem } from './Checkbox-Radio-Item'
+import { CheckboxRadioItem } from '../Checkbox-Radio-Item'
 
 describe('Radio', () => {
 	it('Рендеринг без label', () => {

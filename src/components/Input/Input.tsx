@@ -42,7 +42,7 @@ export const Input: FC<Props> = ({
 	padding = '8px 10px',
 
 	focusColor = '#373b3e',
-	focusBorderColor = '#ffffff',
+	focusBorderColor = '#090909',
 	...props
 }) => {
 	const labelStyle: LabelStyle = {
