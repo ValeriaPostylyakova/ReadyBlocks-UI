@@ -1,3 +1,4 @@
+import cssModulesPlugin from 'esbuild-css-modules-plugin'
 import { defineConfig } from 'tsup'
 
 export default defineConfig({
@@ -8,4 +9,9 @@ export default defineConfig({
 	dts: true,
 	tsconfig: './tsconfig.json',
 	external: ['react', 'react-dom'],
+	esbuildPlugins: [
+		cssModulesPlugin({
+			localsConvention: 'camelCaseOnly',
+		}),
+	],
 })
