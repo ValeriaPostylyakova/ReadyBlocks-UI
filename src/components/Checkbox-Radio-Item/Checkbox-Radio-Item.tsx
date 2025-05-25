@@ -11,6 +11,7 @@ export interface Props {
 	borderColor?: string
 	size?: string
 	type: 'radio' | 'checkbox'
+	className?: string
 }
 
 interface ToggleItemStyles extends React.CSSProperties {
@@ -27,13 +28,15 @@ export const CheckboxRadioItem: FC<Props> = ({
 	disabled,
 	bgColor = '#39349a',
 	borderColor = '#39349a',
-	size = '1rem',
+	size = '14px',
 	type,
+	className,
 }) => {
 	const [isChecked, setIsChecked] = useState(checked)
 
 	const handleChange = () => {
 		setIsChecked(prevChecked => !prevChecked)
+		console.log(isChecked)
 	}
 
 	const bgColorRgba = hexToRgba(bgColor, 0.25)
@@ -63,7 +66,7 @@ export const CheckboxRadioItem: FC<Props> = ({
 				<input
 					id={id}
 					type={type}
-					className={inputClassName}
+					className={`${inputClassName} ${styles.className}`}
 					disabled={disabled}
 					checked={isChecked}
 					onChange={handleChange}

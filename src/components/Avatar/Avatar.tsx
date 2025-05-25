@@ -8,6 +8,7 @@ export interface Props {
 	src?: string
 	fontSize?: string
 	size: 'small' | 'medium' | 'large'
+	className?: string
 }
 
 export interface AvatarStyles extends React.CSSProperties {
@@ -26,7 +27,10 @@ export const Avatar: FC<Props> = ({ bgColor = '#39349a', size, ...props }) => {
 	}
 
 	return (
-		<div style={style} className={`${styles.avatar} ${styles[size]}`}>
+		<div
+			style={style}
+			className={`${styles.avatar} ${styles[size]} ${styles.className}`}
+		>
 			{props.children}
 		</div>
 	)

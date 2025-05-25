@@ -30,7 +30,7 @@ export const Typography: FC<Props> = ({
 		case 'h1':
 			return (
 				<h1
-					className={`${styles.typography} ${styles.h1} ${className}`}
+					className={`${styles.typography} ${styles.h1} ${styles.className}`}
 					style={stylesTypography}
 				>
 					{children}

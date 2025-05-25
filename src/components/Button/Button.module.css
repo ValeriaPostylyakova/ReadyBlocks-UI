@@ -8,12 +8,13 @@
 	position: relative;
 	overflow: hidden;
 	line-height: 1;
-	padding: 10px 20px;
+	padding: var(--padding);
 	font-size: var(--font-size, 14px);
 	background-color: var(--button-background-color);
 	color: #fff;
 	text-align: center;
 	transition: opacity 0.3s ease-in-out;
+	font-family: inherit;
 }
 
 .button:hover {

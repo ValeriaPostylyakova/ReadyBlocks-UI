@@ -1,0 +1,28 @@
+.modalWrapper {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--bg-wrapper);
+	backdrop-filter: blur(var(--blur-wrapper));
+	z-index: 1000;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal {
+	background-color: var(--bg-modal);
+	padding: var(--padding-modal);
+	border-radius: var(--border-radius-modal);
+	box-shadow: 0 0 10px var(--box-shadow-modal);
+}
+
+.modalWrapper.open {
+	opacity: 1;
+	visibility: visible;
+}

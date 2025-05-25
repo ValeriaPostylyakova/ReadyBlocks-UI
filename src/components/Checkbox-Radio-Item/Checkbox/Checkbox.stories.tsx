@@ -19,7 +19,7 @@ export const Basic: Story = {
 	args: {
 		id: 'basic',
 		type: 'checkbox',
-		size: '25px',
+		size: '20px',
 	},
 }
 

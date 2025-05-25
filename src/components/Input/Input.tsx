@@ -19,6 +19,7 @@ export interface Props {
 	fontSize?: string
 	focusColor?: string
 	focusBorderColor?: string
+	className?: string
 }
 
 export interface LabelStyle extends React.CSSProperties {
@@ -39,10 +40,11 @@ export const Input: FC<Props> = ({
 	bgColor = '#f9f9f9',
 	borderColor = '#4a4a4a',
 	radius = '0.3rem',
-	padding = '8px 10px',
+	padding = '3px 10px',
 
 	focusColor = '#373b3e',
 	focusBorderColor = '#090909',
+	className,
 	...props
 }) => {
 	const labelStyle: LabelStyle = {
@@ -69,7 +71,9 @@ export const Input: FC<Props> = ({
 			</label>
 			<input
 				type={type}
-				className={`${styles.input} ${styles[props.variant]}`}
+				className={`${styles.input} ${styles[props.variant]} ${
+					styles.className
+				}`}
 				{...props}
 				style={inputStyle}
 			/>

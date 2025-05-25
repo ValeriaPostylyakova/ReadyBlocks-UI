@@ -1,4 +1,6 @@
+export { Avatar } from './Avatar/Avatar'
 export { Button } from './Button/Button'
 export { CheckboxRadioItem } from './Checkbox-Radio-Item/Checkbox-Radio-Item'
 export { Input } from './Input/Input'
+export { Modal } from './Modal/Modal'
 export { Typography } from './Typography/Typography'

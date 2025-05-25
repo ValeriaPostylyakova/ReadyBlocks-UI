@@ -18,27 +18,26 @@ type Story = StoryObj<typeof Button>
 export const Solid: Story = {
 	args: {
 		children: 'Button',
-		type: 'solid',
 	},
 }
 
 export const Outlined: Story = {
 	args: {
 		children: 'Button',
-		type: 'outlined',
+		variant: 'outlined',
 	},
 }
 
 export const Dashed: Story = {
 	args: {
 		children: 'Button',
-		type: 'dashed',
+		variant: 'dashed',
 	},
 }
 
 export const Filled: Story = {
 	args: {
 		children: 'Button',
-		type: 'filled',
+		variant: 'filled',
 	},
 }
