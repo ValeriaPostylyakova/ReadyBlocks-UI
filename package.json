@@ -1,6 +1,6 @@
 {
 	"name": "readyblocks-ui",
-	"version": "1.1.6",
+	"version": "1.1.7",
 	"description": "",
 	"main": "dist/index.js",
 	"module": "dist/index.mjs",
@@ -9,6 +9,7 @@
 	"files": [
 		"dist"
 	],
+	"homepage": "https://valeriapostylyakova.github.io/ReadyBlocks-UI/",
 	"scripts": {
 		"dev": "tsup --watch",
 		"build": "tsup",
