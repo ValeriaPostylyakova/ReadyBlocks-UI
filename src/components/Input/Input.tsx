@@ -4,7 +4,7 @@ import styles from './Input.module.css'
 export interface Props {
 	id: string
 	type: 'text' | 'password' | 'email'
-	variant: 'solid' | 'outlined' | 'filled'
+	variant?: 'solid' | 'outlined' | 'filled'
 	label?: string
 	labelDisplay?: 'inline' | 'block'
 	placeholder?: string
@@ -20,6 +20,7 @@ export interface Props {
 	focusColor?: string
 	focusBorderColor?: string
 	className?: string
+	width?: string
 }
 
 export interface LabelStyle extends React.CSSProperties {
@@ -33,6 +34,7 @@ export interface InputStyle extends React.CSSProperties {
 	'--padding': string
 	'--focus-color': string
 	'--focus-border-color': string
+	'--width'?: string
 }
 
 export const Input: FC<Props> = ({
@@ -41,7 +43,7 @@ export const Input: FC<Props> = ({
 	borderColor = '#4a4a4a',
 	radius = '0.3rem',
 	padding = '3px 10px',
-
+	variant = 'solid',
 	focusColor = '#373b3e',
 	focusBorderColor = '#090909',
 	className,
@@ -58,6 +60,7 @@ export const Input: FC<Props> = ({
 		'--padding': padding,
 		'--focus-color': focusColor,
 		'--focus-border-color': focusBorderColor,
+		'--width': props.width,
 	}
 
 	return (
@@ -71,9 +74,7 @@ export const Input: FC<Props> = ({
 			</label>
 			<input
 				type={type}
-				className={`${styles.input} ${styles[props.variant]} ${
-					styles.className
-				}`}
+				className={`${styles.input} ${styles[variant]} ${styles.className}`}
 				{...props}
 				style={inputStyle}
 			/>

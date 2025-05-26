@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react'
 import { Typography } from './Typography'
 
 describe('Typography Component', () => {
-	it('renders h1 element with correct text and default styles', () => {
+	it('отображение элемента h1 с текстом и стилями по умолчанию', () => {
 		render(<Typography variant='h1'>Test H1 Heading</Typography>)
 		const h1Element = screen.getByRole('heading', { level: 1 })
 		expect(h1Element).toBeInTheDocument()
