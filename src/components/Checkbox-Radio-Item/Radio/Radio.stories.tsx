@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { CheckboxRadioItem } from '../Checkbox-Radio-Item'
 const meta: Meta<typeof CheckboxRadioItem> = {
-	title: 'Components/Radio',
+	title: 'Components/Inputs/Radio',
 	component: CheckboxRadioItem,
 	parameters: {
 		layout: 'centered',

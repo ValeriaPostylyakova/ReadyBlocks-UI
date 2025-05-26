@@ -4,7 +4,7 @@ import { Button } from '../Button/Button'
 import { Modal, Props } from './Modal'
 
 const meta: Meta<typeof Modal> = {
-	title: 'Digid/Modal',
+	title: 'Components/Feedback/Modal',
 	component: Modal,
 	parameters: {
 		layout: 'centered',
@@ -18,13 +18,13 @@ export default meta
 const Template: StoryFn<Props> = args => {
 	const [isOpen, setIsOpen] = useState(args.open || false)
 
-	const handleOpen = () => {
-		setIsOpen(true)
-	}
-
 	return (
 		<div>
-			<Button padding='8px 20px' fontSize='18px' onClick={handleOpen}>
+			<Button
+				padding='8px 20px'
+				fontSize='18px'
+				onClick={() => setIsOpen(true)}
+			>
 				Open modal
 			</Button>
 			<Modal {...args} open={isOpen} setOpen={setIsOpen}>

@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Input } from './Input'
 
 const meta: Meta<typeof Input> = {
-	title: 'Components/Input',
+	title: 'Components/Inputs/Input',
 	component: Input,
 	parameters: {
 		layout: 'centered',
@@ -39,7 +39,7 @@ export const Filled: Story = {
 	},
 }
 
-export const LabeInline: Story = {
+export const LabelInline: Story = {
 	args: {
 		id: 'label-inline',
 		label: 'label:',

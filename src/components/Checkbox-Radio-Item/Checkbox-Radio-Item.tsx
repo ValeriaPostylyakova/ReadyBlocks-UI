@@ -36,7 +36,6 @@ export const CheckboxRadioItem: FC<Props> = ({
 
 	const handleChange = () => {
 		setIsChecked(prevChecked => !prevChecked)
-		console.log(isChecked)
 	}
 
 	const bgColorRgba = hexToRgba(bgColor, 0.25)

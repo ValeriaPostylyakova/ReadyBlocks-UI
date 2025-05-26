@@ -1,0 +1,1 @@
+function g(n,u){if(n=n.replace("#",""),n.length!==3&&n.length!==6)return null;n.length===3&&(n=n[0]+n[0]+n[1]+n[1]+n[2]+n[2]);const t=parseInt(n.substring(0,2),16),s=parseInt(n.substring(2,4),16),i=parseInt(n.substring(4,6),16);return isNaN(t)||isNaN(s)||isNaN(i)||t<0||t>255||s<0||s>255||i<0||i>255||u<0||u>1?null:`rgba(${t}, ${s}, ${i}, ${u})`}export{g as h};

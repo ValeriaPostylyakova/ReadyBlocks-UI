@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { CheckboxRadioItem } from '../Checkbox-Radio-Item'
 
 const meta: Meta<typeof CheckboxRadioItem> = {
-	title: 'Components/Checkbox',
+	title: 'Components/Inputs/Checkbox',
 	component: CheckboxRadioItem,
 	parameters: {
 		layout: 'centered',
@@ -26,6 +26,7 @@ export const Basic: Story = {
 export const Label: Story = {
 	args: {
 		id: 'label',
+		type: 'checkbox',
 		label: 'Checkbox',
 		size: '20px',
 	},
@@ -34,15 +35,16 @@ export const Label: Story = {
 export const LabelDisabled: Story = {
 	args: {
 		id: 'label-disabled',
+		type: 'checkbox',
 		label: 'Checkbox Disabled',
 		disabled: true,
-		checked: true,
 	},
 }
 
 export const Checked: Story = {
 	args: {
-		id: 'checked',
+		id: 'checkbox-checked',
+		type: 'checkbox',
 		size: '1.5rem',
 		checked: true,
 	},
@@ -51,6 +53,7 @@ export const Checked: Story = {
 export const Disabled: Story = {
 	args: {
 		id: 'disabled',
+		type: 'checkbox',
 		size: '1.5rem',
 		disabled: true,
 	},
@@ -59,8 +62,9 @@ export const Disabled: Story = {
 export const DisabledChecked: Story = {
 	args: {
 		id: 'disabled-checked',
+		type: 'checkbox',
 		size: '1.5rem',
-		disabled: true,
 		checked: true,
+		disabled: true,
 	},
 }
