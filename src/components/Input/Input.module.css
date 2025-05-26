@@ -8,6 +8,7 @@
 	background-color: inherit;
 	font-family: inherit;
 	width: var(--width);
+	display: var(--display);
 
 	&::placeholder {
 		color: var(--border-color);

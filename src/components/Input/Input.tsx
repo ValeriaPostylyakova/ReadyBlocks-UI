@@ -7,6 +7,7 @@ export interface Props {
 	variant?: 'solid' | 'outlined' | 'filled'
 	label?: string
 	labelDisplay?: 'inline' | 'block'
+	display?: 'inline' | 'block' | 'inline-block'
 	placeholder?: string
 	value?: string
 	disabled?: boolean
@@ -35,6 +36,7 @@ export interface InputStyle extends React.CSSProperties {
 	'--focus-color': string
 	'--focus-border-color': string
 	'--width'?: string
+	'--display'?: string
 }
 
 export const Input: FC<Props> = ({
@@ -47,6 +49,7 @@ export const Input: FC<Props> = ({
 	focusColor = '#373b3e',
 	focusBorderColor = '#090909',
 	className,
+	display = 'inline',
 	...props
 }) => {
 	const labelStyle: LabelStyle = {
@@ -61,6 +64,7 @@ export const Input: FC<Props> = ({
 		'--focus-color': focusColor,
 		'--focus-border-color': focusBorderColor,
 		'--width': props.width,
+		'--display': display,
 	}
 
 	return (
