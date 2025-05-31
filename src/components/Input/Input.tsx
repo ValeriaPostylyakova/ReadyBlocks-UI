@@ -78,7 +78,7 @@ export const Input: FC<Props> = ({
 			</label>
 			<input
 				type={type}
-				className={`${styles.input} ${styles[variant]} ${styles.className}`}
+				className={`${styles.input} ${styles[variant]} ${className}`}
 				{...props}
 				style={inputStyle}
 			/>

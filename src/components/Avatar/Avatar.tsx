@@ -29,7 +29,7 @@ export const Avatar: FC<Props> = ({ bgColor = '#39349a', size, ...props }) => {
 	return (
 		<div
 			style={style}
-			className={`${styles.avatar} ${styles[size]} ${styles.className}`}
+			className={`${styles.avatar} ${styles[size]} ${className}`}
 		>
 			{props.children}
 		</div>

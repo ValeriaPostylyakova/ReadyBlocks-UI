@@ -65,7 +65,7 @@ export const CheckboxRadioItem: FC<Props> = ({
 				<input
 					id={id}
 					type={type}
-					className={`${inputClassName} ${styles.className}`}
+					className={`${inputClassName} ${className}`}
 					disabled={disabled}
 					checked={isChecked}
 					onChange={handleChange}
